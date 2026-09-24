@@ -146,7 +146,23 @@ export default function Products() {
                       ))}
                     </ul>
                     <div className="product-footer">
-                      <span className="product-price">{product.price || "Get Quote"}</span>
+                      {(() => {
+                        const priceStr = String(product.price || "Get Quote").trim();
+                        if (priceStr.toLowerCase().startsWith('starting from')) {
+                          const amount = priceStr.replace(/starting from/i, '').trim();
+                          return (
+                            <div className="product-price-block">
+                              <span className="product-price-label">Starting from</span>
+                              <span className="product-price-val">{amount}</span>
+                            </div>
+                          );
+                        }
+                        return (
+                          <div className="product-price-block">
+                            <span className="product-price-val">{priceStr}</span>
+                          </div>
+                        );
+                      })()}
                       <button 
                         className="btn btn-primary btn-card" 
                         onClick={(e) => { 

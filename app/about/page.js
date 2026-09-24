@@ -1,7 +1,50 @@
 'use client';
 
-import React, { useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useQuote } from '../../context/QuoteContext';
+
+function CounterNumber({ target, suffix = '+' }) {
+  const [count, setCount] = useState(0);
+  const ref = useRef(null);
+  const hasAnimated = useRef(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !hasAnimated.current) {
+          hasAnimated.current = true;
+          let startTime = null;
+          const duration = 2000;
+
+          const step = (timestamp) => {
+            if (!startTime) startTime = timestamp;
+            const progress = Math.min((timestamp - startTime) / duration, 1);
+            const easeProgress = 1 - Math.pow(1 - progress, 3);
+            const currentCount = Math.floor(easeProgress * target);
+            setCount(currentCount);
+
+            if (progress < 1) {
+              requestAnimationFrame(step);
+            } else {
+              setCount(target);
+            }
+          };
+
+          requestAnimationFrame(step);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [target]);
+
+  return <span ref={ref}>{count.toLocaleString()}{suffix}</span>;
+}
 
 export default function About() {
   const { openModal } = useQuote();
@@ -28,7 +71,7 @@ export default function About() {
       <section className="page-banner" aria-label="About us page introduction">
         <div className="container">
           <h1>About Pure Drops RO</h1>
-          <p>A look into our history, values, and commitment to distributing clean water and premium wellness across Kozhikode since 2012.</p>
+          <p>A look into our history, values, and commitment to distributing clean water and premium wellness across Kozhikode since 2001.</p>
         </div>
         
         {/* Banner Wave SVG */}
@@ -150,13 +193,13 @@ export default function About() {
       </section>
 
       {/* ==========================================================================
-           AQUASOLVE BY NUMBERS
+           PURE DROPS RO BY NUMBERS
            ========================================================================== */}
       <section className="section stats-numbers-section animate-on-scroll">
         <div className="container">
           <div className="stats-numbers-header">
             <span className="stats-numbers-dash">&#9679;</span>
-            <h2 className="stats-numbers-title">AQUASOLVE BY NUMBERS</h2>
+            <h2 className="stats-numbers-title">PURE DROPS RO BY NUMBERS</h2>
             <span className="stats-numbers-dash">&#9679;</span>
           </div>
 
@@ -168,7 +211,7 @@ export default function About() {
                   <rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
                 </svg>
               </div>
-              <div className="stat-number">10+</div>
+              <div className="stat-number"><CounterNumber target={25} /></div>
               <div className="stat-label">Years of<br/>Experience</div>
             </div>
 
@@ -179,7 +222,7 @@ export default function About() {
                   <circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
                 </svg>
               </div>
-              <div className="stat-number">250+</div>
+              <div className="stat-number"><CounterNumber target={2000} /></div>
               <div className="stat-label">Projects<br/>Completed</div>
             </div>
 
@@ -190,7 +233,7 @@ export default function About() {
                   <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
                 </svg>
               </div>
-              <div className="stat-number">200+</div>
+              <div className="stat-number"><CounterNumber target={1750} /></div>
               <div className="stat-label">Happy<br/>Clients</div>
             </div>
 
@@ -201,7 +244,7 @@ export default function About() {
                   <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.77 3.77z"/>
                 </svg>
               </div>
-              <div className="stat-number">50+</div>
+              <div className="stat-number"><CounterNumber target={750} /></div>
               <div className="stat-label">AMC/O&M<br/>Clients</div>
             </div>
           </div>
@@ -360,11 +403,23 @@ export default function About() {
           </div>
 
           <div className="timeline-container animate-on-scroll">
-            <div className="timeline-item">
-              <div className="timeline-content">
-                <div className="timeline-year">2012</div>
-                <h3>Company Foundation</h3>
-                <p>Pure Drops RO opens as a small domestic filter supplier in Kozhikode, Kerala, aiming to improve local tap water standards.</p>
+            {/* Timeline 2001 */}
+            <div className="timeline-item animate-on-scroll">
+              <div className="timeline-badge">2001</div>
+              <div className="timeline-panel">
+                <div className="timeline-date">Company Foundation</div>
+                <h3>Domestic Filter Pioneer</h3>
+                <p>Pure Drops RO opens as a domestic filter supplier in Kozhikode, Kerala, aiming to improve local tap water standards.</p>
+              </div>
+            </div>
+
+            {/* Timeline 2008 */}
+            <div className="timeline-item animate-on-scroll">
+              <div className="timeline-badge">2008</div>
+              <div className="timeline-panel">
+                <div className="timeline-date">Expansion & Softener Integration</div>
+                <h3>Regional Network & Softeners</h3>
+                <p>Expanded our technical service network across Kozhikode district and commenced custom domestic water softener installations.</p>
               </div>
             </div>
 
@@ -372,29 +427,19 @@ export default function About() {
             <div className="timeline-item animate-on-scroll">
               <div className="timeline-badge">2015</div>
               <div className="timeline-panel">
-                <div className="timeline-date">Expansion & Certification</div>
-                <h3>ISO 9001:2015 Quality standards</h3>
-                <p>Achieved formal ISO quality standard certifications. Commenced domestic water softener custom configurations and expanded our installation teams.</p>
+                <div className="timeline-date">Commercial Focus & ISO Certification</div>
+                <h3>ISO 9001:2015 & Commercial RO Plants</h3>
+                <p>Achieved ISO quality certifications and launched high-volume commercial RO plants, sand filters, and iron removal systems for institutions and apartments.</p>
               </div>
             </div>
 
-            {/* Timeline 2018 */}
+            {/* Timeline 2020 */}
             <div className="timeline-item animate-on-scroll">
-              <div className="timeline-badge">2018</div>
+              <div className="timeline-badge">2020</div>
               <div className="timeline-panel">
-                <div className="timeline-date">Commercial Focus</div>
-                <h3>Industrial Filtration & Iron Plants</h3>
-                <p>Introduced high-volume sand filters, iron removal setups, and commercial RO treatment plants designed for colleges, clinics, and apartments.</p>
-              </div>
-            </div>
-
-            {/* Timeline 2022 */}
-            <div className="timeline-item animate-on-scroll">
-              <div className="timeline-badge">2022</div>
-              <div className="timeline-panel">
-                <div className="timeline-date">Lab Installation</div>
-                <h3>Thamarassery Laboratory Launch</h3>
-                <p>Opened a dedicated water chemistry analysis laboratory in Thamarassery, Calicut, allowing scientific membrane custom adjustments based on local source footprints.</p>
+                <div className="timeline-date">Lab Setup</div>
+                <h3>Water Analysis Laboratory</h3>
+                <p>Opened a dedicated water chemistry testing laboratory counter in Kozhikode for scientific membrane tuning based on local water quality footprints.</p>
               </div>
             </div>
 
@@ -403,8 +448,8 @@ export default function About() {
               <div className="timeline-badge">2026</div>
               <div className="timeline-panel">
                 <div className="timeline-date">Present Day</div>
-                <h3>10,000+ Satisfied Connections</h3>
-                <p>Now a leading household name for water purifiers in Kerala, servicing massive clients like Spring Dale, BMH Hospital, and ULCCS projects.</p>
+                <h3>25+ Years of Excellence & 10,000+ Clients</h3>
+                <p>Celebrating over two decades as a leading water treatment provider in Kerala, servicing clients like Iqraa Hospital, Milma, NIT Calicut, and Sadhbhavana World School.</p>
               </div>
             </div>
           </div>

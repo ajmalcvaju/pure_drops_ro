@@ -150,11 +150,17 @@ export default function Home() {
     }
   ];
 
+  const [isPaused, setIsPaused] = useState(false);
+  const touchStartX = useRef(null);
+
   // Auto Scroll Sliders & Setup Observers
   useEffect(() => {
-    const heroTimer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
-    }, 6000);
+    let heroTimer = null;
+    if (!isPaused) {
+      heroTimer = setInterval(() => {
+        setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
+      }, 6000);
+    }
 
     const testimonialTimer = setInterval(() => {
       setTestimonialTransition(true);
@@ -188,12 +194,36 @@ export default function Home() {
     document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
 
     return () => {
-      clearInterval(heroTimer);
+      if (heroTimer) clearInterval(heroTimer);
       clearInterval(testimonialTimer);
       clearInterval(logoTimer);
       observer.disconnect();
     };
-  }, []);
+  }, [isPaused, heroSlides.length]);
+
+  // Touch Swipe Handlers for Hero Slider
+  const handleTouchStart = (e) => {
+    setIsPaused(true);
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = (e) => {
+    setIsPaused(false);
+    if (touchStartX.current === null) return;
+    const touchEndX = e.changedTouches[0].clientX;
+    const diffX = touchStartX.current - touchEndX;
+
+    if (Math.abs(diffX) > 40) {
+      if (diffX > 0) {
+        // Swiped Left -> Next Slide
+        setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
+      } else {
+        // Swiped Right -> Prev Slide
+        setCurrentSlide((prev) => (prev - 1 + heroSlides.length) % heroSlides.length);
+      }
+    }
+    touchStartX.current = null;
+  };
 
   // Handle snap-back for seamless loop logo carousel
   useEffect(() => {
@@ -222,7 +252,14 @@ export default function Home() {
       {/* ==========================================================================
            HERO SLIDER
            ========================================================================== */}
-      <section className="hero-slider-container" aria-label="Hero Slide Showcase">
+      <section 
+        className="hero-slider-container" 
+        aria-label="Hero Slide Showcase"
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
+        onMouseEnter={() => setIsPaused(true)}
+        onMouseLeave={() => setIsPaused(false)}
+      >
         <div className="slider-wrapper">
           {heroSlides.map((slide, index) => (
             <div key={index} className={`slide ${currentSlide === index ? 'active' : ''}`}>
@@ -289,127 +326,7 @@ export default function Home() {
 
       </section>
 
-      {/* ==========================================================================
-           MISSION & VISION
-           ========================================================================== */}
-      <div className="container animate-on-scroll">
-        <div className="mission-vision-bar">
-          <div className="mv-card vision">
-            <div className="mv-icon">
-              <svg viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
-            </div>
-            <div className="mv-info">
-              <h3>Our Vision</h3>
-              <p>To be a trusted leader in water treatment solutions, recognized for excellence, innovation and commitment to a sustainable tomorrow.</p>
-            </div>
-          </div>
-          <div className="mv-card mission">
-            <div className="mv-icon">
-              <svg viewBox="0 0 24 24"><path d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H7c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.04-.42 1.99-1.07 2.25z"/></svg>
-            </div>
-            <div className="mv-info">
-              <h3>Our Mission</h3>
-              <p>To deliver reliable, cost-effective and environmentally responsible water treatment solutions that ensure clean water, regulatory compliance and long-term value for our clients.</p>
-            </div>
-          </div>
-        </div>
-      </div>
 
-      {/* ==========================================================================
-           WHY CHOOSE AQUASOLVE (GRID)
-           ========================================================================== */}
-      <section className="section" style={{ paddingTop: '2rem', paddingBottom: '2rem' }}>
-        <div className="container">
-          
-          <div className="why-choose-section-box animate-on-scroll">
-            
-            {/* Top Banner Header */}
-            <div className="why-choose-banner-header">
-              <h3>&middot; WHY CHOOSE PURE DROPS RO? &middot;</h3>
-            </div>
-
-            <div className="why-choose-grid">
-              
-              {/* 1. EXPERIENCED TEAM */}
-              <div className="why-choose-card">
-                <div className="wc-icon-circle wc-circle-teal">
-                  <svg viewBox="0 0 24 24">
-                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                    <circle cx="9" cy="7" r="4"></circle>
-                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                  </svg>
-                </div>
-                <div className="wc-content">
-                  <h4>EXPERIENCED TEAM</h4>
-                  <p>Skilled professionals with deep domain knowledge and hands-on experience.</p>
-                </div>
-              </div>
-
-              {/* 2. CUSTOMIZED SOLUTIONS */}
-              <div className="why-choose-card">
-                <div className="wc-icon-circle wc-circle-blue">
-                  <svg viewBox="0 0 24 24">
-                    <circle cx="12" cy="12" r="9"></circle>
-                    <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
-                    <line x1="12" y1="17" x2="12.01" y2="17"></line>
-                  </svg>
-                </div>
-                <div className="wc-content">
-                  <h4>CUSTOMIZED SOLUTIONS</h4>
-                  <p>Tailor-made systems to meet your specific requirements and site conditions.</p>
-                </div>
-              </div>
-
-              {/* 3. QUALITY ASSURANCE */}
-              <div className="why-choose-card">
-                <div className="wc-icon-circle wc-circle-teal">
-                  <svg viewBox="0 0 24 24">
-                    <circle cx="12" cy="8" r="6"></circle>
-                    <path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"></path>
-                    <path d="M9 8l2 2 4-4"></path>
-                  </svg>
-                </div>
-                <div className="wc-content">
-                  <h4>QUALITY ASSURANCE</h4>
-                  <p>High-quality components and strict testing at every stage of execution.</p>
-                </div>
-              </div>
-
-              {/* 4. ON-TIME DELIVERY */}
-              <div className="why-choose-card">
-                <div className="wc-icon-circle wc-circle-blue">
-                  <svg viewBox="0 0 24 24">
-                    <circle cx="12" cy="12" r="10"></circle>
-                    <polyline points="12 6 12 12 16 14"></polyline>
-                  </svg>
-                </div>
-                <div className="wc-content">
-                  <h4>ON-TIME DELIVERY</h4>
-                  <p>Strong project management ensuring timely delivery and smooth execution.</p>
-                </div>
-              </div>
-
-              {/* 5. AFTER-SALES SUPPORT */}
-              <div className="why-choose-card why-choose-full-width">
-                <div className="wc-icon-circle wc-circle-teal">
-                  <svg viewBox="0 0 24 24">
-                    <path d="M3 18v-6a9 9 0 0 1 18 0v6"></path>
-                    <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path>
-                  </svg>
-                </div>
-                <div className="wc-content">
-                  <h4>AFTER-SALES SUPPORT</h4>
-                  <p>Dedicated support team for operation, maintenance and long-term reliability.</p>
-                </div>
-              </div>
-
-            </div>
-
-          </div>
-
-        </div>
-      </section>
 
       {/* ==========================================================================
            ABOUT PREVIEW (SPLASH)
@@ -463,28 +380,30 @@ export default function Home() {
           </div>
 
           <div className="products-grid">
-            {/* Product 1 */}
-            <Link href="/products/101" className="product-card-link animate-on-scroll">
+            {/* Product 1: P&A P90 Monsoon Ready Champion */}
+            <Link href="/products/128" className="product-card-link animate-on-scroll">
               <div className="product-card">
                 <div className="product-image-area">
-                  <span className="product-tag" style={{ background: '#0f4c81' }}>Active Copper</span>
-                  <img src="/product_aqua_phoenix_gold_ro.png" alt="Aqua Phoenix Gold Mineral RO Water Purifier" className="product-image" />
+                  <span className="product-tag" style={{ background: '#0f4c81' }}>ISI Certified IS 16240</span>
+                  <img src="/product_pa_p90_monsoon_champion.png" alt="P&A P90 Monsoon Ready Champion RO+UV+UF+Alkaline Purifier" className="product-image" />
                 </div>
                 <div className="product-info">
-                  <h3>Aqua Phoenix Gold Mineral RO Water Purifier</h3>
-                  <p style={{ fontSize: '0.85rem', color: 'var(--text-light)' }}>10 Stage RO+UV+UF+Active Copper Mineral Purifier with 10L Pure Water Storage and Smoked Canopy Gauge.</p>
+                  <h3>P&amp;A P90 Monsoon Ready Champion RO+UV+UF+Alkaline Purifier</h3>
+                  <p style={{ fontSize: '0.85rem', color: 'var(--text-light)' }}>ISI Certified 7-Stage RO + UV + UF + Alkaline Water Purifier with Auto Flush, Nano Tech, and Mineral Controller.</p>
                   <ul className="product-specs">
-                    <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Infusion: Active Copper Ions</li>
-                    <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Design: Smoked Canopy with Gauge</li>
+                    <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Certification: Official ISI Certified (IS 16240)</li>
+                    <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Technology: 7-Stage RO+UV+UF+Alkaline</li>
                   </ul>
                   <div className="product-footer">
-                    <span className="product-price">₹10,999</span>
+                    <div className="product-price-block">
+                      <span className="product-price-val">₹14,000</span>
+                    </div>
                     <button 
                       className="btn btn-primary btn-card" 
                       onClick={(e) => { 
                         e.preventDefault(); 
                         e.stopPropagation(); 
-                        openModal('Aqua Phoenix Gold Mineral RO Water Purifier'); 
+                        openModal('P&A P90 Monsoon Ready Champion RO+UV+UF+Alkaline Purifier'); 
                       }}
                     >
                       Enquire Now
@@ -494,28 +413,30 @@ export default function Home() {
               </div>
             </Link>
 
-            {/* Product 2 */}
-            <Link href="/products/10" className="product-card-link animate-on-scroll">
+            {/* Product 2: Wave Touch Hot, Cold & Normal Alkaline RO Purifier */}
+            <Link href="/products/140" className="product-card-link animate-on-scroll">
               <div className="product-card">
                 <div className="product-image-area">
-                  <span className="product-tag" style={{ background: '#092f56' }}>Dual Mode</span>
-                  <img src="/product_puroaqua_white.jpg" alt="Puroaqua Dual Mode (White)" className="product-image" />
+                  <span className="product-tag" style={{ background: '#092f56' }}>3 Temp Dispenser</span>
+                  <img src="/product_wave_touch_black.png" alt="Wave Touch Hot, Cold & Normal Alkaline RO Purifier" className="product-image" />
                 </div>
                 <div className="product-info">
-                  <h3>Puroaqua Dual Mode (White)</h3>
-                  <p style={{ fontSize: '0.85rem', color: 'var(--text-light)' }}>6-Stage Advanced Purification system with Dual-Mode toggle. RO+UF+ALK for high TDS well water, and SN+UF+ALK for municipal flow.</p>
+                  <h3>Wave Touch Hot, Cold &amp; Normal Alkaline RO Purifier</h3>
+                  <p style={{ fontSize: '0.85rem', color: 'var(--text-light)' }}>Luxury 3-temperature (Hot, Cold &amp; Normal) Alkaline RO + UV + UF water dispenser with digital touch screen &amp; live pH display.</p>
                   <ul className="product-specs">
-                    <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Ideal for: High &amp; Low TDS Water</li>
-                    <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Enrichment: Alkaline pH balancer</li>
+                    <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Dispenser: Instant Hot, Chilled Cold &amp; Normal</li>
+                    <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Display: Smart Touch Screen with Live pH</li>
                   </ul>
                   <div className="product-footer">
-                    <span className="product-price">₹14,500</span>
+                    <div className="product-price-block">
+                      <span className="product-price-val">₹22,000</span>
+                    </div>
                     <button 
                       className="btn btn-primary btn-card" 
                       onClick={(e) => { 
                         e.preventDefault(); 
                         e.stopPropagation(); 
-                        openModal('Puroaqua Dual Mode (White)'); 
+                        openModal('Wave Touch Hot, Cold & Normal Alkaline RO Purifier'); 
                       }}
                     >
                       Enquire Now
@@ -525,59 +446,64 @@ export default function Home() {
               </div>
             </Link>
 
-            {/* Product 3 */}
-            <Link href="/products/12" className="product-card-link animate-on-scroll">
+            {/* Product 3: Purosis Puraqua 8L RO + Alkaline Purifier */}
+            <Link href="/products/138" className="product-card-link animate-on-scroll">
               <div className="product-card">
                 <div className="product-image-area">
-                  <span className="product-tag">Carbon Filter</span>
-                  <img src="/product_frp_vessel.png" alt="Pure Drops Carbon Filter" className="product-image" />
+                  <span className="product-tag" style={{ background: '#0284c7' }}>8L RO+Alkaline</span>
+                  <img src="/product_purosis_8l_ro_alkaline.png" alt="Purosis Puraqua 8L RO + Alkaline Purifier" className="product-image" />
+                </div>
+                <div className="product-info">
+                  <h3>Purosis Puraqua 8L RO + Alkaline Purifier</h3>
+                  <p style={{ fontSize: '0.85rem', color: 'var(--text-light)' }}>Purosis Puraqua 8L RO + Alkaline Technology Purifier with dual-tone cabinet &amp; single-lever tap.</p>
+                  <ul className="product-specs">
+                    <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Storage Capacity: 8 Litres Storage Tank</li>
+                    <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Technology: RO + Active Alkaline</li>
+                  </ul>
+                  <div className="product-footer">
+                    <div className="product-price-block">
+                      <span className="product-price-val">₹13,000</span>
+                    </div>
+                    <button 
+                      className="btn btn-primary btn-card" 
+                      onClick={(e) => { 
+                        e.preventDefault(); 
+                        e.stopPropagation(); 
+                        openModal('Purosis Puraqua 8L RO + Alkaline Purifier'); 
+                      }}
+                    >
+                      Enquire Now
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </Link>
+
+            {/* Product 4: Pure Drops Carbon Filter */}
+            <Link href="/products/150" className="product-card-link animate-on-scroll">
+              <div className="product-card">
+                <div className="product-image-area">
+                  <span className="product-tag" style={{ background: '#0d9488' }}>Activated Carbon</span>
+                  <img src="/product_puredrops_carbon_filter.png" alt="Pure Drops Carbon Filter" className="product-image" />
                 </div>
                 <div className="product-info">
                   <h3>Pure Drops Carbon Filter</h3>
-                  <p style={{ fontSize: '0.85rem', color: 'var(--text-light)' }}>High-grade activated carbon filter. Adsorbs chlorine, organic pesticides, bad taste, odor, and chemical impurities from supply water.</p>
+                  <p style={{ fontSize: '0.85rem', color: 'var(--text-light)' }}>High-grade activated carbon filter. Adsorbs chlorine, organic pesticides, bad taste, odor, and dissolved iron impurities from supply water.</p>
                   <ul className="product-specs">
-                    <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Vessel: FRP pressure tank</li>
-                    <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Service: Simple backwash routine</li>
+                    <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Flow Rate: 1,000 - 10,000 LPH</li>
+                    <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Vessel: High Strength FRP Tank</li>
                   </ul>
                   <div className="product-footer">
-                    <span className="product-price">₹30,000</span>
+                    <div className="product-price-block">
+                      <span className="product-price-label">Starting from</span>
+                      <span className="product-price-val">₹18,000</span>
+                    </div>
                     <button 
                       className="btn btn-primary btn-card" 
                       onClick={(e) => { 
                         e.preventDefault(); 
                         e.stopPropagation(); 
                         openModal('Pure Drops Carbon Filter'); 
-                      }}
-                    >
-                      Enquire Now
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </Link>
-
-            {/* Product 4 */}
-            <Link href="/products/4" className="product-card-link animate-on-scroll">
-              <div className="product-card">
-                <div className="product-image-area">
-                  <span className="product-tag">Heavy Duty</span>
-                  <img src="/product_commercial_ro.png" alt="Pure Drops Commercial RO Treatment Plant" className="product-image" />
-                </div>
-                <div className="product-info">
-                  <h3>Pure Drops Commercial RO Treatment Plant</h3>
-                  <p style={{ fontSize: '0.85rem', color: 'var(--text-light)' }}>Industrial configuration featuring multiple filters, high pressure pumps, and large scale outputs.</p>
-                  <ul className="product-specs">
-                    <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Flow Rate: 250 LPH to 5 KPH</li>
-                    <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Structure: Stainless Steel Frame</li>
-                  </ul>
-                  <div className="product-footer">
-                    <span className="product-price">Get Quote</span>
-                    <button 
-                      className="btn btn-primary btn-card" 
-                      onClick={(e) => { 
-                        e.preventDefault(); 
-                        e.stopPropagation(); 
-                        openModal('Pure Drops Commercial RO Treatment Plant'); 
                       }}
                     >
                       Enquire Now
@@ -770,40 +696,25 @@ export default function Home() {
       {/* ==========================================================================
            OUR CLIENTS
            ========================================================================== */}
-      <section className="section">
+      <section className="section" style={{ background: '#f8fafc', padding: '3.5rem 0' }}>
         <div className="container">
           <div className="section-header animate-on-scroll">
             <h2>Our Prestigious Clients</h2>
-            <p>Trusted by leading institutions, clinics, bridal centers, and co-operatives in Calicut.</p>
+            <p>Trusted by leading hospitals, institutions, dairy co-operatives, and schools in Kozhikode.</p>
           </div>
 
-          <div 
-            className="logo-carousel-viewport animate-on-scroll"
-            style={{
-              '--logo-index': logoIndex,
-              '--logo-speed': logoTransition ? '0.6s' : '0s'
-            }}
-          >
-            <div className="logo-carousel-track">
-              {[
-                '/client-logo-1.png',
-                '/client-logo-2.png',
-                '/client-seashell.png',
-                '/client-copper-kitchen.png',
-                '/client-logo-4.png',
-                '/client-logo-5.png',
-                '/client-logo-1.png',
-                '/client-logo-2.png',
-                '/client-seashell.png',
-                '/client-copper-kitchen.png',
-                '/client-logo-4.png'
-              ].map((logo, idx) => (
-                <div key={idx} className="logo-carousel-item">
-                  <div className="client-logo-wrapper">
-                    <img src={logo} alt={`Client Logo ${idx + 1}`} className="client-logo-img" />
-                  </div>
-                </div>
-              ))}
+          <div className="prestigious-clients-grid animate-on-scroll">
+            <div className="client-logo-card" title="Iqraa Hospital">
+              <img src="/client-logo-1.png" alt="Iqraa Hospital Logo" className="client-logo-img" />
+            </div>
+            <div className="client-logo-card" title="Milma">
+              <img src="/client-logo-2.png" alt="Milma Logo" className="client-logo-img" />
+            </div>
+            <div className="client-logo-card" title="NIT Calicut">
+              <img src="/client-logo-3.png" alt="National Institute of Technology Calicut Logo" className="client-logo-img" />
+            </div>
+            <div className="client-logo-card" title="Sadhbhavana World School">
+              <img src="/client-logo-4.png" alt="Sadhbhavana World School Logo" className="client-logo-img" />
             </div>
           </div>
         </div>

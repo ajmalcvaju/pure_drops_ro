@@ -49,16 +49,13 @@ export default function QuoteModal() {
 • *Email:* ${email}
 • *Requirements:* ${reqMessage}`;
 
-    const whatsappUrl = `https://wa.me/919497150452?text=${encodeURIComponent(text)}`;
+    const whatsappUrl = `https://wa.me/919745137799?text=${encodeURIComponent(text)}`;
 
     setSubmitSuccess(true);
     setIsSubmitting(false);
 
     if (typeof window !== 'undefined') {
-      const newWin = window.open(whatsappUrl, '_blank');
-      if (!newWin) {
-        window.location.href = whatsappUrl;
-      }
+      window.location.href = whatsappUrl;
     }
 
     setTimeout(() => {

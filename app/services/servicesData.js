@@ -55,60 +55,98 @@ export const servicesData = {
       'Full compliance with IS 10500 drinking water parameters'
     ]
   },
+  ro: {
+    id: 'ro',
+    slug: 'ro',
+    title: 'Water Treatment RO Plant (Commercial & Industrial RO)',
+    tag: 'COMMERCIAL RO PLANT',
+    tagClass: 'tag-ro',
+    imageSrc: '/product_industrial_ro_plant_1000lph.png',
+    badge: 'Heavy Industrial Reverse Osmosis Systems',
+    subtitle: '250 LPH to 10,000 LPH Commercial Reverse Osmosis Skid Plants',
+    description: 'High-capacity commercial Reverse Osmosis water purification systems engineered for severe industrial water purification needs. Mounted on heavy-duty 304 Grade Stainless Steel open skid frames, featuring dual FRP pre-treatment vessels, high-rejection 4040 industrial RO membranes, vertical multistage pumps, flow rotameters, and automatic electrical control panels.',
+    heroDesc: 'Heavy-duty industrial 1000 LPH Commercial RO Treatment Plants on SS 304 skids with dual FRP vessels and multistage pumps.',
+    specs: [
+      { label: 'Purification Capacity', val: '250 LPH to 10,000 LPH (Litres / Hour)' },
+      { label: 'RO Membranes', val: '4040 High-Rejection Industrial RO Membranes' },
+      { label: 'Pre-Treatment', val: 'Dual Heavy FRP Vessels (Sand & Activated Carbon)' },
+      { label: 'High Pressure Pump', val: 'Vertical Multistage Commercial High-Pressure Pump' },
+      { label: 'Frame Structure', val: 'Heavy Duty 304 Grade Stainless Steel Open Skid' },
+      { label: 'TDS Handling', val: 'Handles High Raw Water TDS up to 3000 PPM' }
+    ],
+    applications: ['Bottling Plants', 'Hospitals & Dialysis Units', 'Hotels & Resorts', 'Manufacturing Hubs'],
+    process: ['Raw Water Pump', 'Sand & Carbon Pre-Filter', 'Micron Jumbo Cartridge', 'High Pressure Multistage Pump', 'Industrial RO Membranes', 'Pure Water Storage Tank'],
+    highlights: [
+      'Massive 250 LPH to 10,000 LPH output satisfies heavy commercial demands',
+      'Quad 4040 membranes eliminate 99% of dissolved salts, heavy metals & nitrates',
+      'Stainless steel 304 skid layout offers compact footprint & corrosion resistance',
+      'Comprehensive monitoring panel with live pressure gauges and auto-shutoff safety'
+    ]
+  },
+  cooler: {
+    id: 'cooler',
+    slug: 'cooler',
+    title: 'Commercial Water Coolers (SS 304 Food Grade)',
+    tag: 'WATER COOLER',
+    tagClass: 'tag-cooler',
+    imageSrc: '/product_evermac_neo_80.jpg',
+    badge: '100% SS 304 Stainless Steel Build',
+    subtitle: '10L to 80L Heavy Cold Storage Dispensing Systems with Tecumseh Compressor',
+    description: 'Commercial SS 304 Food Grade water coolers featuring heavy-duty Tecumseh refrigeration compressors, inline spun sediment filtration, online ambient supply, and multi-tap chrome dispensing faucets. Engineered to deliver continuous ice-cold drinking water in heavy footfall commercial and public environments.',
+    heroDesc: 'Flagship SS 304 Commercial Water Coolers with heavy cold storage, multi-taps & Tecumseh compressors for high-demand facilities.',
+    specs: [
+      { label: 'Storage Capacities', val: '10L, 15L, 20L, 30L, 40L, 60L & 80L Cold Storage' },
+      { label: 'Body Material', val: '100% SS 304 Food Grade Heavy Stainless Steel' },
+      { label: 'Compressor Make', val: 'Tecumseh High-Efficiency Commercial Refrigeration Compressor' },
+      { label: 'Dispensing Faucets', val: 'Heavy Chrome Push Taps for Multi-User Dispensing' },
+      { label: 'Filtration System', val: 'Inline Spun Sediment Filtration Cartridge' },
+      { label: 'Warranty', val: '1 Year Warranty + Fast Service Support' }
+    ],
+    applications: ['Factories & Workshops', 'Schools & Colleges', 'Hospitals & Clinics', 'Bus & Railway Terminals'],
+    process: ['Water Inlet', 'Inline Sediment Spun Filter', 'SS 304 Chilling Tank', 'Thermostat Refrigeration Cycle', 'Chrome Tap Dispensing'],
+    highlights: [
+      'Multi chrome taps allow several people to fill water simultaneously',
+      'High-efficiency Tecumseh compressor unit provides rapid cooling',
+      'SS 304 food-grade heavy chassis ensures lifelong rust protection',
+      'Integrated pre-filter housing removes suspended particles and sediments'
+    ]
+  },
   stp: {
     id: 'stp',
     slug: 'stp',
-    title: 'Sewage Treatment Plants (STP) - Biological Recycling',
-    tag: 'STP PLANT',
-    tagClass: 'tag-stp',
-    imageSrc: '/stp_plant.png',
-    badge: 'KSPCB Compliant Wastewater Recycling',
-    subtitle: 'Advanced MBR / MBBR Bioreactor Sewage Purification Plants',
-    description: 'Eco-friendly sewage treatment plants engineered to process domestic wastewater from toilets, bathrooms, and kitchens. Utilizing high-efficiency MBBR (Moving Bed Biofilm Reactor) and MBR (Membrane Bioreactor) technology, our STPs produce clear, odor-free recycled water suitable for flushing, gardening, and cooling towers.',
-    heroDesc: 'Turnkey sewage treatment plants with MBR/MBBR bioreactor technology ensuring 100% Pollution Control Board compliance and water recycling.',
+    title: 'Water Treatment RO Plant (Commercial & Industrial RO)',
+    tag: 'COMMERCIAL RO PLANT',
+    tagClass: 'tag-ro',
+    imageSrc: '/product_industrial_ro_plant_1000lph.png',
+    badge: 'Heavy Industrial Reverse Osmosis Systems',
+    subtitle: '250 LPH to 10,000 LPH Commercial Reverse Osmosis Skid Plants',
+    description: 'High-capacity commercial Reverse Osmosis water purification systems engineered for severe industrial water purification needs.',
+    heroDesc: 'Heavy-duty industrial 1000 LPH Commercial RO Treatment Plants on SS 304 skids.',
     specs: [
-      { label: 'Treatment Technology', val: 'MBBR / MBR Bioreactor + Submerged Aeration' },
-      { label: 'Treated Water Metrics', val: 'BOD < 10 mg/L, COD < 50 mg/L, TSS < 10 mg/L' },
-      { label: 'Disinfection System', val: 'Online Chlorination & High-Intensity UV Disinfection' },
-      { label: 'Sludge Management', val: 'Automatic Filter Press Dewatering Assembly' },
-      { label: 'Compliance Guarantee', val: '100% KSPCB & CPCB Pollution Control Board Norms' },
-      { label: 'Odor Control', val: 'Sealed Tank Design with Activated Carbon Scrubbers' }
+      { label: 'Purification Capacity', val: '250 LPH to 10,000 LPH (Litres / Hour)' },
+      { label: 'RO Membranes', val: '4040 High-Rejection Industrial RO Membranes' }
     ],
-    applications: ['Apartment Complexes', 'Shopping Malls', 'Resorts & Hotels', 'IT Parks & Campuses', 'Hospitals'],
-    process: ['Bar Screening', 'Equalization Tank', 'Anoxic & Aeration Bioreactor', 'Secondary Clarifier', 'Pressure Media Filter', 'UV/Chlorine Disinfection', 'Recycled Water Reuse'],
-    highlights: [
-      'High-efficiency MBR / MBBR biofilm media technology',
-      'Odorless, clear recycled water output for toilet flushing & landscaping',
-      'Guaranteed clearance from Kerala State Pollution Control Board (KSPCB)',
-      'Compact footprint with low operational power costs'
-    ]
+    applications: ['Bottling Plants', 'Hospitals', 'Hotels & Resorts', 'Factories'],
+    process: ['Raw Water Pump', 'Pre-Filter', 'RO Membranes', 'Pure Water Storage'],
+    highlights: ['Massive capacity output', '99% salt elimination', 'SS 304 skid frame']
   },
   etp: {
     id: 'etp',
     slug: 'etp',
-    title: 'Effluent Treatment Plants (ETP) & ZLD Systems',
-    tag: 'ETP PLANT',
-    tagClass: 'tag-etp',
-    imageSrc: '/etp_plant.png',
-    badge: 'Industrial Wastewater & Zero Liquid Discharge',
-    subtitle: 'Chemical Coagulation, Neutralization & Evaporator Facilities',
-    description: 'Specialized industrial effluent treatment facilities engineered to treat toxic chemical wastewater, heavy metals, oils, dyes, and organic pollutants from factories. Built-in Zero Liquid Discharge (ZLD) configurations recover over 95% of water for manufacturing reuse.',
-    heroDesc: 'Heavy-duty industrial effluent treatment plants with ZLD concentrate recovery for factories, laundries, and chemical manufacturing.',
+    title: 'Commercial Water Coolers (SS 304 Food Grade)',
+    tag: 'WATER COOLER',
+    tagClass: 'tag-cooler',
+    imageSrc: '/product_evermac_neo_80.jpg',
+    badge: '100% SS 304 Stainless Steel Build',
+    subtitle: '10L to 80L Heavy Cold Storage Dispensing Systems',
+    description: 'Commercial SS 304 Food Grade water coolers featuring heavy-duty Tecumseh refrigeration compressors.',
+    heroDesc: 'Commercial Water Coolers with heavy cold storage & Tecumseh compressors.',
     specs: [
-      { label: 'Plant Capacity', val: '5 KLD to 500+ KLD (Kilo Litres Per Day)' },
-      { label: 'Treatment Process', val: 'Physico-Chemical Coagulation + Biological Oxidation' },
-      { label: 'Heavy Metal Removal', val: 'Chemical Precipitation & DAF (Dissolved Air Flotation)' },
-      { label: 'ZLD System', val: 'High-Pressure RO Concentrate Recovery + Thermal Evaporator' },
-      { label: 'Automation Panel', val: 'PLC Automation with Auto Dosing & pH/ORP Monitors' },
-      { label: 'Environmental Clearance', val: 'Guaranteed KSPCB & CPCB Discharge Approval' }
+      { label: 'Storage Capacities', val: '10L to 80L Cold Storage' },
+      { label: 'Body Material', val: '100% SS 304 Food Grade Stainless Steel' }
     ],
-    applications: ['Commercial Laundries', 'Textile Dyeing Units', 'Food & Beverage Processing', 'Pharmaceutical Plants', 'Auto Service Stations'],
-    process: ['Collection & pH Neutralization', 'Chemical Dosing & Flocculation', 'Primary Clarifier', 'Biological Oxidation', 'UF/RO Concentrate Recovery', 'ZLD Evaporator & Dry Sludge Handling'],
-    highlights: [
-      'Physico-chemical coagulation & Dissolved Air Flotation (DAF)',
-      'Zero Liquid Discharge (ZLD) configurations with thermal evaporators',
-      'Automatic PLC control panel with pH/ORP dosing sensors',
-      'Meets all industrial KSPCB & CPCB environmental discharge standards'
-    ]
+    applications: ['Factories', 'Schools', 'Hospitals', 'Public Halls'],
+    process: ['Water Inlet', 'Filter', 'Chilling Tank', 'Tap Dispensing'],
+    highlights: ['Multi chrome taps', 'Tecumseh compressor', 'SS 304 body']
   }
 };

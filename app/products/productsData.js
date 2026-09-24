@@ -179,428 +179,31 @@ export const productsData = {
   },
   '108': {
     id: '108',
-    slug: 'domestic-water-treatment-plant',
-    title: 'Domestic Water Treatment Plant',
+    slug: 'pure-drops-sediment-filter-frp-vessel',
+    title: 'Pure Drops Sediment Filter',
     category: 'filters',
-    tag: 'Whole-House',
-    price: '₹28,500',
-    originalPrice: '₹35,000',
-    desc: 'Whole-house FRP vessel media filter column featuring multiport top-mounted backwash valve for iron, turbidity, and hardness control.',
-    fullDesc: 'Domestic Water Treatment Plant provides complete whole-house filtration. Installed right after the overhead tank or pump line, it strains out mud, iron stains, foul odor, and suspended sediment across all bathrooms and kitchen taps.',
+    tag: 'Sand & Sediment Media',
+    price: 'Starting from ₹18,000',
+    originalPrice: '₹24,000',
+    desc: 'Premium heavy-duty sand and sediment media filter vessel. Removes dust, silt, clay, mud, and all suspended particles from incoming water supply.',
+    fullDesc: 'Pure Drops Sediment Filter is a premium heavy-duty sand and sediment media filter vessel designed to strain out dust, silt, clay, mud, and suspended solids right at your main water inlet. Built with a high-strength FRP pressure vessel, top-mounted multiport valve for easy manual backwashing, and high-purity turbid sand media, guaranteeing clean water throughout your home or facility.',
     specs: [
-      { label: 'Vessel Construction', val: 'FRP Vessel Media Column' },
-      { label: 'Control Valve', val: 'Multiport Top Mounted Backwash Valve' },
-      { label: 'Contaminant Removal', val: 'Removes Iron, Turbidity, Odor & Hardness' },
-      { label: 'Flow Capacity', val: '1,500 - 3,000 LPH' }
+      { label: 'Flow Capacity', val: '1,000 - 10,000 LPH Flow Rate' },
+      { label: 'Filter Media', val: 'Turbid / Muddy Sand Media Bed' },
+      { label: 'Pressure Vessel', val: 'High Strength FRP Pressure Vessel Tank' },
+      { label: 'Control Valve', val: 'Top-Mounted Multiport Valve (Backwash, Rinse, Filter)' },
+      { label: 'Ideal For', val: 'Turbid / Muddy Well Water & Borewell Water' },
+      { label: 'Maintenance', val: 'Easy Manual Backwash in 5 Minutes' },
+      { label: 'Warranty', val: '2 Years Official Warranty' }
     ],
     features: [
-      'Filters water for the entire house including showers, washing machines & heaters',
-      'Eliminates yellow/brown iron stains on bathroom tiles and clothes',
-      'High durability FRP pressure vessel withstands weather and water pressure',
-      'Manual multiport valve allows 5-minute backwashing without tools'
+      'Removes dust, silt, clay, mud, and all suspended particles from incoming water supply',
+      'Filters water for the entire house including storage tanks, showers, washing machines & heaters',
+      'Heavy-duty FRP pressure vessel withstands high line pressure and outdoor weather',
+      'Manual multiport valve allows effortless regular backwashing to keep filter media clean & long-lasting'
     ],
-    applications: ['Whole House / Villas', 'Apartment Complexes', 'Homestays', 'Hostels'],
-    imageSrc: null
-  },
-  '109': {
-    id: '109',
-    slug: 'nice-commercial-treatment-plant-5000l',
-    title: 'Industrial Water Treatment Plant 5000L',
-    category: 'filters',
-    tag: 'Commercial WTP',
-    price: '₹54,000',
-    originalPrice: '₹68,000',
-    desc: 'Heavy-duty dual column 5000L commercial water treatment plant designed for 24/7 continuous operation in hotels, hospitals, and hostels.',
-    fullDesc: 'Industrial Water Treatment Plant 5000L features dual FRP pressure vessels filled with multi-grade quartz sand, manganese dioxide, and active carbon media paired with a heavy brine regeneration tank.',
-    specs: [
-      { label: 'Duty Cycle', val: 'Continuous 24/7 Filtered Water Supply' },
-      { label: 'Column Setup', val: 'Dual Columns with Heavy Brine Tank' },
-      { label: 'Target Users', val: 'Ideal for Hotels, Hospitals & Hostels' },
-      { label: 'Flow Rate', val: '5,000 Litres / Hour' }
-    ],
-    features: [
-      'Dual column design enables continuous water filtration during backwash',
-      'Removes heavy turbidity, dissolved iron, manganese, and organic foul odor',
-      'Integrated brine tank for softeners regeneration',
-      'Built to industrial grade standards for zero downtime'
-    ],
-    applications: ['Commercial Hotels', 'Hospitals', 'Student Campuses', 'Industrial Plants'],
-    imageSrc: null
-  },
-  '110': {
-    id: '110',
-    slug: 'nice-commercial-ro-plant-250lph',
-    title: 'Commercial RO Plant 250 LPH Skid',
-    category: 'plants',
-    tag: 'Commercial RO',
-    price: '₹48,000',
-    originalPrice: '₹60,000',
-    desc: '250 Litres per hour commercial reverse osmosis skid plant with SS 304 frame and vertical multistage high pressure pump.',
-    fullDesc: 'Commercial RO Plant 250 LPH Skid is engineered for schools, IT offices, and commercial buildings requiring 250L per hour of purified drinking water. Features SS 304 skid frame, high rejection 4040 membranes, and rotameters.',
-    specs: [
-      { label: 'Skid Frame', val: 'SS 304 Heavy Duty Skid Frame' },
-      { label: 'High Pressure Pump', val: 'Vertical Multistage High-Pressure Pump' },
-      { label: 'Instrumentation', val: 'Dual Flowmeters & Digital Controller' },
-      { label: 'Output Capacity', val: '250 Litres / Hour' }
-    ],
-    features: [
-      'Generates 250 LPH pure drinking water for up to 500 people daily',
-      'Corrosion resistant Stainless Steel 304 skid framework',
-      'Vertical multistage high-pressure pump for continuous quiet operation',
-      'Digital panel monitors feed pressure, permeate flow, and TDS'
-    ],
-    applications: ['Colleges & Schools', 'Corporate Offices', 'Clinics & Dialysis Units', 'Restaurants'],
-    imageSrc: null
-  },
-  '111': {
-    id: '111',
-    slug: 'nice-industrial-ro-plant-1000lph',
-    title: 'Industrial RO Plant 1000 LPH Skid',
-    category: 'plants',
-    tag: 'Heavy Duty 1000 LPH',
-    price: '₹1,35,000',
-    originalPrice: '₹1,60,000',
-    desc: '1000 LPH high-output industrial RO plant with triple FRP media columns, micron filter, and SCADA touch PLC control panel.',
-    fullDesc: 'Industrial RO Plant 1000 LPH Skid delivers high-volume pure water generation. Features triple pre-treatment vessels, stainless micron filter housings, industrial 8040 membranes, and optional PLC/SCADA touchscreen control.',
-    specs: [
-      { label: 'Pre-Treatment', val: 'Triple FRP Media Columns with Digital Heads' },
-      { label: 'Micron Filtration', val: 'Stainless Steel Micron Filter & High-Pressure Pump' },
-      { label: 'Control System', val: 'Integrated Touchscreen PLC / SCADA Control Panel' },
-      { label: 'Capacity', val: '1,000 Litres / Hour' }
-    ],
-    features: [
-      'High output 1,000 LPH pure RO water production for industrial processes',
-      'Automatic digital multiport heads handle automated flushing and backwashing',
-      'Touchscreen PLC controller with auto-fault diagnostic alarms',
-      'Heavy duty 8040 TFC membranes achieve 98%+ salt rejection'
-    ],
-    applications: ['Bottling Plants', 'Pharma Factories', 'Food Processing', 'Large Hospitals'],
-    imageSrc: null
-  },
-  '112': {
-    id: '112',
-    slug: 'nice-frio-15-online-water-cooler',
-    title: 'Frio 15 (Online) Water Cooler',
-    category: 'cooler',
-    tag: '15L Cold Storage',
-    price: '₹24,700',
-    originalPrice: '₹30,000',
-    desc: 'Food-grade SS 304 online water cooler with 15L cold storage, dual faucets, and Tecumseh cooling compressor.',
-    fullDesc: 'Frio 15 (Online) Water Cooler supplies continuous room temperature water alongside 15 Litres of chilled drinking water. Built with food-grade SS 304 sheet and Tecumseh refrigeration compressor.',
-    specs: [
-      { label: 'Storage & Supply', val: 'Online Normal Supply & 15L Cold Storage' },
-      { label: 'Faucets & Filter', val: 'Dual Faucets & Spun Filtration System' },
-      { label: 'Body Dimensions', val: 'Food-Grade SS 304 Body (335 x 290 x 1210 mm)' },
-      { label: 'Compressor', val: 'Heavy-Duty Tecumseh Compressor' }
-    ],
-    features: [
-      'Dual taps dispense chilled and normal purified water simultaneously',
-      'Built-in spun candle filter removes sediment and turbidity',
-      'Heavy-gauge SS 304 stainless steel resists rust and denting',
-      'Energy efficient Tecumseh compressor with fast cooling coil'
-    ],
-    applications: ['Office Reception', 'Showrooms', 'Bank Branches', 'Small Factories'],
-    imageSrc: null
-  },
-  '113': {
-    id: '113',
-    slug: 'nice-frio-nn-15-water-cooler',
-    title: 'Frio NN 15 Water Cooler',
-    category: 'cooler',
-    tag: '15L Normal Storage',
-    price: '₹18,850',
-    originalPrice: '₹23,000',
-    desc: '15 Litres normal water storage cooler with dual faucets, integrated spun filter, and full SS 304 stainless steel construction.',
-    fullDesc: 'Frio NN 15 Water Cooler provides 15 Litres of room-temperature purified drinking water storage with dual heavy-duty faucets.',
-    specs: [
-      { label: 'Storage Capacity', val: '15L Food-Grade Normal Storage Capacity' },
-      { label: 'Faucets & Filter', val: 'Dual Faucets & Integrated Spun Filtration' },
-      { label: 'Body & Size', val: 'Food-Grade SS 304 Body (335 x 290 x 1210 mm)' },
-      { label: 'Cooling Unit', val: 'Reliable Tecumseh Cooling Unit' }
-    ],
-    features: [
-      '15L food-grade stainless steel storage tank preserves water purity',
-      'Dual chrome push-faucets for high traffic dispensing',
-      'Built-in spun pre-filtration housing included',
-      'Easy to clean hygienic stainless steel design'
-    ],
-    applications: ['Schools', 'Offices', 'Workshops', 'Community Halls'],
-    imageSrc: null
-  },
-  '114': {
-    id: '114',
-    slug: 'nice-frio-nh-18-water-cooler',
-    title: 'Frio NH 18 Water Cooler',
-    category: 'cooler',
-    tag: '18L Hot & Normal',
-    price: '₹23,400',
-    originalPrice: '₹28,500',
-    desc: '18 Litres total storage (15L normal + 3L hot) water dispenser with heating element and dual faucets.',
-    fullDesc: 'Frio NH 18 Water Cooler dispenses hot water for tea/coffee alongside room temperature water. Total 18L storage capacity (15L normal + 3L hot).',
-    specs: [
-      { label: 'Storage Breakdown', val: '15L Normal & 3L Hot Water Storage (18L Total)' },
-      { label: 'Faucets', val: 'Dual Faucets & Integrated Spun Filtration' },
-      { label: 'Body & Size', val: 'Food-Grade SS 304 Body (335 x 290 x 1210 mm)' },
-      { label: 'Heating System', val: 'Heavy-Duty Tecumseh Compressor & Heating Element' }
-    ],
-    features: [
-      'Provides hot water (85°C+) for instant tea, coffee, and soup preparations',
-      'Separate hot and normal faucets with child-safety hot tap lock',
-      'High grade heating element with automatic thermostat control',
-      'Robust SS 304 body suitable for public spaces'
-    ],
-    applications: ['Pantry Rooms', 'Staff Canteens', 'Hospitals', 'Corporate Pantries'],
-    imageSrc: null
-  },
-  '115': {
-    id: '115',
-    slug: 'nice-frio-nc-15-water-cooler',
-    title: 'Frio NC 15 Water Cooler',
-    category: 'cooler',
-    tag: '15L Cold & Normal',
-    price: '₹24,700',
-    originalPrice: '₹30,000',
-    desc: '15 Litres dual mode water cooler (5L normal + 10L cold storage) with Tecumseh compressor and spun filtration.',
-    fullDesc: 'Frio NC 15 Water Cooler features 15 Litres total capacity (5L normal + 10L cold storage) with dual push taps.',
-    specs: [
-      { label: 'Storage Breakdown', val: '5L Normal & 10L Cold Water Storage (15L Total)' },
-      { label: 'Faucets & Filter', val: 'Dual Faucets & Integrated Spun Filtration' },
-      { label: 'Dimensions', val: 'Food-Grade SS 304 Body (335 x 290 x 1210 mm)' },
-      { label: 'Compressor', val: 'High-Performance Tecumseh Compressor' }
-    ],
-    features: [
-      'Dispenses both chilled and ambient purified drinking water',
-      '10 Litres rapid cooling storage tank powered by Tecumseh motor',
-      'Built-in sediment spun candle filter',
-      'Heavy-duty stainless steel build'
-    ],
-    applications: ['Offices', 'Gyms', 'Clinics', 'Institutions'],
-    imageSrc: null
-  },
-  '116': {
-    id: '116',
-    slug: 'nice-frio-nhc-16-water-cooler',
-    title: 'Frio NHC 16 Water Cooler',
-    category: 'cooler',
-    tag: '16L Hot, Cold & Normal',
-    price: '₹26,260',
-    originalPrice: '₹32,000',
-    desc: 'All-in-one 16L triple tap dispenser (5L normal + 10L cold + 1L hot storage) crafted in SS 304 stainless steel.',
-    fullDesc: 'Frio NHC 16 Water Cooler features 3 distinct taps for Hot, Cold, and Normal water. Total 16 Litres storage (5L normal + 10L cold + 1L hot).',
-    specs: [
-      { label: 'Storage Breakdown', val: '5L Normal, 10L Cold & 1L Hot Storage (16L Total)' },
-      { label: 'Taps & Filter', val: '3 Taps (Normal, Hot & Cold) & Spun Filtration' },
-      { label: 'Dimensions', val: 'Food-Grade SS 304 Body (335 x 290 x 1210 mm)' },
-      { label: 'Systems', val: 'Heavy-Duty Tecumseh Compressor & Heating Element' }
-    ],
-    features: [
-      '3-in-1 convenience: Hot, Cold, and Room temperature water in one unit',
-      'Dedicated faucets with distinct color coding',
-      'Thermostat controlled hot & cold storage tanks',
-      'Food-grade SS 304 construction'
-    ],
-    applications: ['Executive Pantries', 'VIP Lounges', 'Hospitals', 'Colleges'],
-    imageSrc: null
-  },
-  '117': {
-    id: '117',
-    slug: 'nice-hydra-20-online-water-cooler',
-    title: 'Hydra 20 (Online) Water Cooler',
-    category: 'cooler',
-    tag: '20L Cold Storage',
-    price: '₹31,200',
-    originalPrice: '₹38,000',
-    desc: '20 Litres high capacity online cold water cooler with spun filtration and heavy-duty Tecumseh refrigeration.',
-    fullDesc: 'Hydra 20 (Online) Water Cooler provides 20 Litres of cold storage paired with online ambient supply. Perfect for commercial areas.',
-    specs: [
-      { label: 'Storage & Supply', val: 'Online Normal Supply & 20L Cold Storage' },
-      { label: 'Faucets & Filter', val: 'Dual Faucets & Spun Filtration System' },
-      { label: 'Dimensions', val: 'Food-Grade SS 304 Body (365 x 330 x 1160 mm)' },
-      { label: 'Compressor', val: 'Heavy-Duty Tecumseh Compressor' }
-    ],
-    features: [
-      'High 20-litre cold tank capacity handles heavy rush hours',
-      'Wider SS 304 cabinet footprint (365 x 330 mm) for added stability',
-      'Integrated pre-filter stage removes rust and sediments',
-      'Fast chilling refrigeration cycle'
-    ],
-    applications: ['Factory Floors', 'College Mess', 'Bus Terminals', 'Public Centers'],
-    imageSrc: null
-  },
-  '118': {
-    id: '118',
-    slug: 'nice-hydra-nn-20-water-cooler',
-    title: 'Hydra NN 20 Water Cooler',
-    category: 'cooler',
-    tag: '20L Normal Storage',
-    price: '₹21,450',
-    originalPrice: '₹26,000',
-    desc: '20L normal water storage dispenser featuring dual faucets and integrated spun/carbon filter block.',
-    fullDesc: 'Hydra NN 20 Water Cooler offers 20 Litres room-temperature water storage with dual faucets and double stage spun/carbon filtration.',
-    specs: [
-      { label: 'Storage Capacity', val: '20L Food-Grade Normal Storage Capacity' },
-      { label: 'Taps & Filters', val: 'Dual Faucets & Integrated Spun/Carbon Filtration' },
-      { label: 'Dimensions', val: 'Food-Grade SS 304 Body (365 x 330 x 1160 mm)' },
-      { label: 'Cooling Unit', val: 'Reliable Tecumseh Cooling Unit' }
-    ],
-    features: [
-      '20L food grade stainless steel storage capacity',
-      'Dual spun + activated carbon pre-filtration blocks chlorine and odor',
-      'Sturdy SS 304 metal body',
-      'Durable brass chrome faucets'
-    ],
-    applications: ['Schools', 'Institutions', 'Government Offices', 'Temple Halls'],
-    imageSrc: null
-  },
-  '119': {
-    id: '119',
-    slug: 'nice-hydra-nh-23-water-cooler',
-    title: 'Hydra NH 23 Water Cooler',
-    category: 'cooler',
-    tag: '23L Hot & Normal',
-    price: '₹26,650',
-    originalPrice: '₹33,000',
-    desc: '23L total capacity water dispenser (20L normal + 3L hot water) with dual faucets and spun/carbon filtration.',
-    fullDesc: 'Hydra NH 23 Water Cooler provides 23 Litres total capacity (20L normal + 3L hot) with integrated heating element.',
-    specs: [
-      { label: 'Storage Breakdown', val: '20L Normal & 3L Hot Water Storage (23L Total)' },
-      { label: 'Faucets & Filter', val: 'Dual Faucets & Integrated Spun/Carbon Filtration' },
-      { label: 'Dimensions', val: 'Food-Grade SS 304 Body (365 x 330 x 1160 mm)' },
-      { label: 'Systems', val: 'Heavy-Duty Tecumseh Compressor & Heating Element' }
-    ],
-    features: [
-      '20 Litres ambient and 3 Litres hot water dispensing',
-      'Spun + carbon dual pre-filtration system',
-      'High thermal insulation preserves heat efficiently',
-      'Heavy gauge SS 304 stainless steel cabinet'
-    ],
-    applications: ['Canteens', 'Hostel Mess', 'Hospitals', 'Office Buildings'],
-    imageSrc: null
-  },
-  '120': {
-    id: '120',
-    slug: 'nice-hydra-nc-20-water-cooler',
-    title: 'Hydra NC 20 Water Cooler',
-    category: 'cooler',
-    tag: '20L Cold & Normal',
-    price: '₹34,450',
-    originalPrice: '₹42,000',
-    desc: '20L dual temperature water dispenser (10L normal + 10L cold storage) in food-grade SS 304 steel body.',
-    fullDesc: 'Hydra NC 20 Water Cooler provides 20 Litres total storage (10L normal + 10L cold) with high-efficiency Tecumseh cooling.',
-    specs: [
-      { label: 'Storage Breakdown', val: '10L Normal & 10L Cold Water Storage (20L Total)' },
-      { label: 'Faucets & Filter', val: 'Dual Faucets & Integrated Spun/Carbon Filtration' },
-      { label: 'Dimensions', val: 'Food-Grade SS 304 Body (365 x 330 x 1160 mm)' },
-      { label: 'Compressor', val: 'High-Performance Tecumseh Compressor' }
-    ],
-    features: [
-      'Equal 10L normal and 10L cold storage distribution',
-      'Tecumseh compressor delivers fast ice-cold water',
-      'Dual stage sediment & carbon filtration',
-      'Food-grade 304 stainless steel'
-    ],
-    applications: ['Gymnasiums', 'Sports Complexes', 'Industrial Offices', 'Malls'],
-    imageSrc: null
-  },
-  '121': {
-    id: '121',
-    slug: 'nice-hydra-nhc-23-water-cooler',
-    title: 'Hydra NHC 23 Water Cooler',
-    category: 'cooler',
-    tag: '23L Hot, Cold & Normal',
-    price: '₹37,050',
-    originalPrice: '₹45,000',
-    desc: 'Commercial 23L triple tap water dispenser (10L normal + 10L cold + 3L hot storage) with Tecumseh compressor.',
-    fullDesc: 'Hydra NHC 23 Water Cooler is a 23L high-capacity 3-tap dispenser (10L normal + 10L cold + 3L hot).',
-    specs: [
-      { label: 'Storage Breakdown', val: '10L Normal, 10L Cold & 3L Hot Storage (23L Total)' },
-      { label: 'Taps & Filter', val: '3 Taps (Normal, Hot & Cold) & Spun/Carbon Filtration' },
-      { label: 'Dimensions', val: 'Food-Grade SS 304 Body (365 x 330 x 1160 mm)' },
-      { label: 'Systems', val: 'Heavy-Duty Tecumseh Compressor & Heating Element' }
-    ],
-    features: [
-      'Triple temperature faucets for hot, cold, and room temp drinking water',
-      '23 Litres combined storage capacity for high traffic commercial spaces',
-      'Integrated dual spun + carbon filtration block',
-      'Full SS 304 anti-corrosive body construction'
-    ],
-    applications: ['Corporate Headquarters', 'Hospitals', 'Convention Centers', 'Hotels'],
-    imageSrc: null
-  },
-  '122': {
-    id: '122',
-    slug: 'nice-cube-nhc-11-water-cooler',
-    title: 'Cube NHC 11 Countertop Water Cooler',
-    category: 'cooler',
-    tag: '11L Compact Storage',
-    price: '₹20,150',
-    originalPrice: '₹25,000',
-    desc: 'Compact countertop 11L water cooler (5L normal + 5L cold + 1L hot) suitable for office desks and kitchens.',
-    fullDesc: 'Cube NHC 11 Countertop Water Cooler offers 11 Litres total storage (5L normal + 5L cold + 1L hot) in a space-saving desktop size (330 x 290 x 685 mm).',
-    specs: [
-      { label: 'Storage Breakdown', val: '5L Normal, 5L Cold & 1L Hot Storage (11L Total)' },
-      { label: 'Taps & Mounting', val: '3 Countertop Taps (Normal, Hot & Cold)' },
-      { label: 'Dimensions', val: 'Food-Grade SS 304 Body (330 x 290 x 685 mm)' },
-      { label: 'Cooling Unit', val: 'Compact Tecumseh Cooling Unit & Spun Filtration' }
-    ],
-    features: [
-      'Compact countertop footprint fits easily on kitchen counters & office tables',
-      'Triple tap functionality: Hot, Cold & Normal',
-      'Stainless steel 304 food grade construction',
-      'Built-in spun filtration cartridge'
-    ],
-    applications: ['Office Desks', 'Small Kitchens', 'Conference Rooms', 'Doctor Cabins'],
-    imageSrc: null
-  },
-  '123': {
-    id: '123',
-    slug: 'nice-edge-nn-80-water-cooler',
-    title: 'Edge NN 80 Water Cooler',
-    category: 'cooler',
-    tag: '80L High Capacity',
-    price: '₹28,200',
-    originalPrice: '₹35,000',
-    desc: '80 Litres commercial heavy-duty water cooler with 3 faucets, designed for factories, schools, and public halls.',
-    fullDesc: 'Edge NN 80 Water Cooler is an 80 Litre ultra-high-capacity water dispenser with 3 heavy-duty push faucets and robust industrial compressor.',
-    specs: [
-      { label: 'Storage Capacity', val: '80L Food-Grade Normal Storage Capacity' },
-      { label: 'Faucets & Filters', val: '3 Heavy-Duty Faucets & Spun/Carbon Filtration' },
-      { label: 'Dimensions', val: 'Food-Grade SS 304 Body (565 x 525 x 1340 mm)' },
-      { label: 'Compressor', val: 'Robust Industrial Tecumseh Compressor' }
-    ],
-    features: [
-      'Massive 80-litre storage capacity serves hundreds of users',
-      '3 heavy duty push faucets reduce waiting queues during break hours',
-      'Heavy gauge SS 304 body (565 x 525 x 1340 mm)',
-      'Dual spun and carbon pre-treatment filters'
-    ],
-    applications: ['Factory Plants', 'School Campuses', 'Auditoriums', 'Public Transport Terminals'],
-    imageSrc: null
-  },
-  '124': {
-    id: '124',
-    slug: 'nice-cube-nc-10-water-cooler',
-    title: 'Cube NC 10 Countertop Water Cooler',
-    category: 'cooler',
-    tag: '10L Compact Storage',
-    price: '₹18,200',
-    originalPrice: '₹22,000',
-    desc: 'Countertop 10L dual tap water cooler (5L normal + 5L cold storage) in stainless steel compact body.',
-    fullDesc: 'Cube NC 10 Countertop Water Cooler features 10 Litres storage (5L normal + 5L cold) in a compact 685mm height desktop cabinet.',
-    specs: [
-      { label: 'Storage Breakdown', val: '5L Normal & 5L Cold Water Storage (10L Total)' },
-      { label: 'Taps & Mounting', val: '2 Countertop Faucets (Normal & Cold)' },
-      { label: 'Dimensions', val: 'Food-Grade SS 304 Body (330 x 290 x 685 mm)' },
-      { label: 'Cooling System', val: 'Compact Tecumseh Compressor & Spun Filtration' }
-    ],
-    features: [
-      'Space-saving desktop design with dual faucets for Normal and Cold water',
-      'Built-in Tecumseh compressor cooling engine',
-      'Spun sediment pre-filter included inside cabinet',
-      'Full SS 304 food-grade stainless steel build'
-    ],
-    applications: ['Small Offices', 'Home Pantries', 'Clinics', 'Consultation Rooms'],
-    imageSrc: null
+    applications: ['Whole House / Villas', 'Apartment Complexes', 'Homestays', 'Hostels & Commercial Buildings'],
+    imageSrc: '/product_puredrops_sediment_filter.png'
   },
   '125': {
     id: '125',
@@ -1230,5 +833,91 @@ export const productsData = {
     ],
     applications: ['Large Factories & Mills', 'Stadiums & Sports Complexes', 'Super-Specialty Hospitals', 'University Campuses'],
     imageSrc: '/product_evermac_neo_80.jpg'
+  },
+  '148': {
+    id: '148',
+    slug: 'pure-drops-industrial-ro-plant-1000-lph-skid',
+    title: 'Pure Drops Industrial RO Plant 1000 LPH Skid',
+    category: 'plants',
+    tag: '1000 LPH Industrial RO',
+    price: '₹1,25,000',
+    originalPrice: '₹1,65,000',
+    desc: 'Heavy industrial 1000 LPH Commercial RO Treatment Plant on SS 304 skid with dual FRP vessels & multistage pump.',
+    fullDesc: 'Pure Drops Industrial RO Plant 1000 LPH Skid is a high-capacity commercial reverse osmosis water purification system engineered for severe industrial water purification needs. Mounted on a heavy-duty 304 Grade Stainless Steel open skid frame, it features dual 1354/1465 FRP pre-treatment vessels (Sand & Carbon), twin 20" jumbo pre-filters, 4 high-rejection 4040 industrial RO membrane pressure vessels, vertical multistage high-pressure pump, dual rotameter flow meters, pressure gauges, and Sarwan automatic electrical control panel.',
+    specs: [
+      { label: 'Purification Capacity', val: '1000 Litres / Hour (1000 LPH)' },
+      { label: 'Pre-Treatment Vessels', val: 'Dual Heavy FRP Vessels (Sand Filter & Activated Carbon Filter)' },
+      { label: 'RO Membranes', val: '4 x 4040 High-Rejection Industrial RO Membranes' },
+      { label: 'High Pressure Pump', val: 'Vertical Multistage Commercial High-Pressure Pump' },
+      { label: 'Control Automation', val: 'Sarwan Automatic Electrical Panel with Voltage & Amp Meters' },
+      { label: 'Frame Structure', val: 'Heavy Duty 304 Grade Stainless Steel Open Skid' },
+      { label: 'Flow & Pressure Monitoring', val: 'Dual Rotameter Flow Meters & Stainless Steel Pressure Gauges' },
+      { label: 'Raw Water TDS Limit', val: 'Handles High Raw Water TDS up to 3000 PPM' }
+    ],
+    features: [
+      'Massive 1000 Litres per Hour continuous output satisfies large commercial & industrial water demands',
+      'Dual FRP multi-media pre-treatment vessels remove heavy suspended solids, mud, turbidity, chlorine & odor',
+      'Quad 4040 industrial RO membranes eliminate 99% of dissolved salts, heavy metals, arsenic & silica',
+      'Stainless steel 304 skid layout offers compact footprint, easy transport, and corrosion resistance',
+      'Comprehensive monitoring panel with live pressure gauges, flow rotameters, and auto-shutoff safety'
+    ],
+    applications: ['Bottling Plants', 'Hospitals & Dialysis Units', 'Large Hotels & Resorts', 'Factories & Manufacturing Hubs'],
+    imageSrc: '/product_industrial_ro_plant_1000lph.png'
+  },
+  '149': {
+    id: '149',
+    slug: 'pure-drops-iron-remover-filter-frp-vessel',
+    title: 'Pure Drops Iron Remover Filter',
+    category: 'filters',
+    tag: 'Iron Removal Media',
+    price: 'Starting from ₹18,000',
+    originalPrice: '₹24,000',
+    desc: 'Specialized catalytic manganese dioxide media filter for removing high dissolved iron content, yellow stains, and metallic odor.',
+    fullDesc: 'Pure Drops Iron Remover Filter is a specialized catalytic manganese dioxide media filter vessel designed for removing high dissolved iron content, yellow stains, and metallic odor from incoming well and borewell water. Built with a heavy-duty FRP pressure vessel, top-mounted multiport valve for regular backwash & rinse, and catalytic manganese dioxide media bed.',
+    specs: [
+      { label: 'Storage Tank / Flow', val: '1,000 - 10,000 LPH Storage Tank' },
+      { label: 'Filter Media', val: 'Catalytic Manganese Dioxide' },
+      { label: 'Pressure Vessel', val: 'High Strength FRP Pressure Tank' },
+      { label: 'Control Valve', val: 'Top-Mounted Multiport Valve (Backwash, Rinse, Filter)' },
+      { label: 'Ideal For', val: 'Reddish / High Iron Well Water' },
+      { label: 'Maintenance', val: 'Periodic Backwash & Rinse' },
+      { label: 'Warranty', val: '2 Years Warranty' }
+    ],
+    features: [
+      'Removes high dissolved iron content, yellow pipe stains, and metallic odor',
+      'Catalytic Manganese Dioxide media oxidizes and filters soluble iron efficiently',
+      'Prevents staining of sanitaryware, tiles, laundry & water storage tanks',
+      'High-strength FRP vessel with multiport valve for simple manual backwash & rinse'
+    ],
+    applications: ['Reddish / High Iron Borewells', 'Residential Homes & Villas', 'Hotels & Homestays', 'Commercial Laundries & Facilities'],
+    imageSrc: '/product_puredrops_iron_remover_filter.png'
+  },
+  '150': {
+    id: '150',
+    slug: 'pure-drops-carbon-filter-frp-vessel',
+    title: 'Pure Drops Carbon Filter',
+    category: 'filters',
+    tag: 'Activated Carbon Media',
+    price: 'Starting from ₹18,000',
+    originalPrice: '₹24,000',
+    desc: 'High-grade activated carbon filter. Adsorbs chlorine, organic pesticides, bad taste, odor, and dissolved iron impurities from supply water.',
+    fullDesc: 'Pure Drops Carbon Filter is a high-grade activated carbon filter vessel engineered to adsorb chlorine, organic pesticides, bad taste, foul odor, and dissolved organic impurities from supply water. Built with a high-strength FRP pressure vessel, top-mounted multiport valve for simple backwash routines, and premium high-grade activated carbon media.',
+    specs: [
+      { label: 'Storage Tank / Flow', val: '1,000 - 10,000 LPH Storage Tank' },
+      { label: 'Filter Media', val: 'High Grade Activated Carbon' },
+      { label: 'Pressure Vessel', val: 'High Strength FRP Pressure Tank' },
+      { label: 'Control Valve', val: 'Top-Mounted Multiport Valve (Backwash, Rinse, Filter)' },
+      { label: 'Ideal For', val: 'Foul Odor & Chlorine Water' },
+      { label: 'Maintenance', val: 'Simple Backwash Routine' },
+      { label: 'Warranty', val: '2 Years Warranty' }
+    ],
+    features: [
+      'Adsorbs free chlorine, organic pesticides, foul odor, bad taste & organic contaminants',
+      'High-grade activated carbon media delivers exceptional surface adsorption capability',
+      'Protects downstream plumbing, water heaters, and domestic RO purifiers',
+      'Heavy-duty FRP pressure vessel with multiport valve for quick, effortless backwashing'
+    ],
+    applications: ['Whole House / Villas', 'Apartment Complexes', 'Hotels & Restaurants', 'Commercial Plants & Cafeterias'],
+    imageSrc: '/product_puredrops_carbon_filter.png'
   }
 };

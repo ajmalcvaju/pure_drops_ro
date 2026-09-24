@@ -40,16 +40,14 @@ export default function Header() {
       <div className="top-bar">
         <div className="container top-bar-content">
           <div className="top-left-info">
-            <span className="iso-badge">ISO 9001:2015 CERTIFIED</span>
-            <span>AN ISO 9001:2015 CERTIFIED COMPANY</span>
+            <span className="iso-badge">ISO 9001:2015</span>
+            <span style={{ fontSize: '0.8rem', letterSpacing: '0.03em' }}>GSTIN: <strong style={{ color: 'var(--primary-color)' }}>32IQAPK9062G1ZT</strong></span>
           </div>
           <div className="top-right-info">
             <span className="top-link" id="headerPhoneLink">
               <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
               Contact:&nbsp;
-              <a href="tel:+919497150452" style={{ color: 'inherit', textDecoration: 'none' }}>94971 50452</a>
-              &nbsp;/&nbsp;
-              <a href="tel:+919846253025" style={{ color: 'inherit', textDecoration: 'none' }}>98462 53025</a>
+              <a href="tel:+919745137799" style={{ color: 'inherit', textDecoration: 'none' }}>97451 37799</a>
             </span>
             <button 
               className="btn btn-primary btn-card" 
@@ -97,7 +95,7 @@ export default function Header() {
             </li>
             <li>
               <Link href="/services" className={isActive('/services') ? 'active' : ''} onClick={closeMenu}>
-                Services & Lab
+                Services
               </Link>
             </li>
             <li>

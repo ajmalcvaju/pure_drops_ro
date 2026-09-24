@@ -61,26 +61,25 @@ export default function Services() {
 • *Testing Location:* ${location}
 • *Issues Observed:* ${issues}`;
 
-    const whatsappUrl = `https://wa.me/919497150452?text=${encodeURIComponent(text)}`;
+    const whatsappUrl = `https://wa.me/919745137799?text=${encodeURIComponent(text)}`;
+
+    setIsSubmitting(false);
+    setSubmitSuccess(true);
+    if (typeof window !== 'undefined') {
+      window.location.href = whatsappUrl;
+    }
+
+    setFormData({
+      name: '',
+      phone: '',
+      source: 'Open Well',
+      location: 'On-site Technician Visit (Kozhikode district only)',
+      issues: ''
+    });
 
     setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitSuccess(true);
-      if (typeof window !== 'undefined') {
-        window.open(whatsappUrl, '_blank');
-      }
-      setFormData({
-        name: '',
-        phone: '',
-        source: 'Open Well',
-        location: 'On-site Technician Visit (Kozhikode district only)',
-        issues: ''
-      });
-
-      setTimeout(() => {
-        setSubmitSuccess(false);
-      }, 6000);
-    }, 600);
+      setSubmitSuccess(false);
+    }, 6000);
   };
 
   const faqsList = [
@@ -113,8 +112,8 @@ export default function Services() {
            ========================================================================== */}
       <section className="page-banner" aria-label="Services page introduction">
         <div className="container">
-          <h1>Professional Services & Lab Testing</h1>
-          <p>Expert installations, periodic maintenance support, and extensive laboratory diagnostic reports.</p>
+          <h1>Our Services</h1>
+          <p>Expert installations, periodic maintenance support, and extensive water diagnostic reports.</p>
         </div>
         
         {/* Banner Wave SVG */}
@@ -164,7 +163,7 @@ export default function Services() {
                   <img src="/wtp_plant.png" alt="Water Treatment Plant (WTP)" />
                 </div>
                 <div className="plant-info">
-                  <p>Water Treatment Plants that deliver safe, clean &amp; potable water for various applications.</p>
+                  <p>Water Treatment Plants (Media Filtration &amp; Softeners) that deliver safe, clean &amp; potable water.</p>
                   <div className="plant-card-action">
                     <span>View Specs &amp; Details</span> &rarr;
                   </div>
@@ -172,15 +171,15 @@ export default function Services() {
               </div>
             </Link>
 
-            {/* 3rd: STP Plant */}
-            <Link href="/services/stp" className="plant-card-link animate-on-scroll">
+            {/* 3rd: Water Treatment RO Plant */}
+            <Link href="/services/ro" className="plant-card-link animate-on-scroll">
               <div className="plant-card">
-                <div className="plant-tag tag-stp">STP PLANT</div>
+                <div className="plant-tag tag-ro">COMMERCIAL RO PLANT</div>
                 <div className="plant-img-wrapper">
-                  <img src="/stp_plant.png" alt="Sewage Treatment Plant (STP)" />
+                  <img src="/product_industrial_ro_plant_1000lph.png" alt="Commercial Water Treatment RO Plant" />
                 </div>
                 <div className="plant-info">
-                  <p>Sewage Treatment Plants that treat domestic sewage efficiently and enable safe discharge or reuse.</p>
+                  <p>High-capacity commercial &amp; industrial Reverse Osmosis Skid plants engineered for heavy-duty purification.</p>
                   <div className="plant-card-action">
                     <span>View Specs &amp; Details</span> &rarr;
                   </div>
@@ -188,15 +187,15 @@ export default function Services() {
               </div>
             </Link>
 
-            {/* 4th: ETP Plant */}
-            <Link href="/services/etp" className="plant-card-link animate-on-scroll">
+            {/* 4th: Water Cooler */}
+            <Link href="/services/cooler" className="plant-card-link animate-on-scroll">
               <div className="plant-card">
-                <div className="plant-tag tag-etp">ETP PLANT</div>
+                <div className="plant-tag tag-cooler">WATER COOLER</div>
                 <div className="plant-img-wrapper">
-                  <img src="/etp_plant.png" alt="Effluent Treatment Plant (ETP)" />
+                  <img src="/product_evermac_neo_80.jpg" alt="SS 304 Commercial Water Cooler" />
                 </div>
                 <div className="plant-info">
-                  <p>Effluent Treatment Plants designed to treat industrial wastewater and ensure zero liquid discharge solutions.</p>
+                  <p>Heavy-duty SS 304 food-grade commercial water coolers with Tecumseh compressors for instant chilled drinking water.</p>
                   <div className="plant-card-action">
                     <span>View Specs &amp; Details</span> &rarr;
                   </div>
@@ -344,7 +343,7 @@ export default function Services() {
             
             {/* Top Banner Header */}
             <div className="why-choose-banner-header">
-              <h3>&middot; WHY CHOOSE AQUASOLVE? &middot;</h3>
+              <h3>&middot; WHY CHOOSE PURE DROPS RO? &middot;</h3>
             </div>
 
             <div className="why-choose-grid">
@@ -438,19 +437,19 @@ export default function Services() {
           <div className="grid-2">
             
             <div className="animate-on-scroll">
-              <h2 style={{ fontSize: '2.2rem', marginBottom: '1.5rem' }}>Book Lab Water Test</h2>
+              <h2 style={{ fontSize: '2.2rem', marginBottom: '1.5rem' }}>Schedule On-Site Water Quality Test</h2>
               <p style={{ color: 'var(--text-light)', marginBottom: '1.5rem', fontSize: '1rem' }}>
-                Understanding your water is the first step towards health. Pure Drops RO operates an advanced chemical laboratory at Surabhi Complex, Karadi, Thamarassery.
+                Understanding your water is the first step towards health. Pure Drops RO provides comprehensive water quality testing and analysis across Kozhikode.
               </p>
               <p style={{ color: 'var(--text-light)', marginBottom: '1.5rem', fontSize: '0.95rem' }}>
-                Simply schedule an on-site sample collection, or bring 1 Litre of your groundwater in a clean bottle directly to our collection counter. Our technicians test for acidity, calcium carbonate hardness, iron sediment presence, and biological bacteria.
+                Simply schedule an on-site technician visit. Our experienced technicians test for TDS parameters, acidity, calcium carbonate hardness, and iron sediment presence directly at your location.
               </p>
               <div style={{ display: 'flex', gap: '1.5rem', marginTop: '2rem' }}>
                 <div className="info-item" style={{ color: 'var(--primary-color)' }}>
                   <div className="info-icon" style={{ background: 'var(--bg-cyan-light)' }}><svg viewBox="0 0 24 24" style={{ fill: 'var(--primary-color)' }}><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div>
                   <div className="info-text">
-                    <h4 style={{ fontSize: '0.95rem', fontWeight: 700 }}>Lab Address</h4>
-                    <p style={{ fontSize: '0.85rem', color: 'var(--text-light)' }}>Surabhi Complex, Karadi, Thamarassery</p>
+                    <h4 style={{ fontSize: '0.95rem', fontWeight: 700 }}>Registered Office Address</h4>
+                    <p style={{ fontSize: '0.85rem', color: 'var(--text-light)' }}>10/505, Chethukadavu, Mukkam Road, Kunnamangalam, Kozhikode, Kerala - 673571</p>
                   </div>
                 </div>
               </div>
@@ -539,7 +538,6 @@ export default function Services() {
                           disabled={isSubmitting}
                         >
                           <option>On-site Technician Visit (Kozhikode district only)</option>
-                          <option>I will drop-off water sample at Thamarassery Lab</option>
                         </select>
                       </div>
                       <div className="form-group">
