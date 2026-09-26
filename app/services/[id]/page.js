@@ -91,7 +91,11 @@ export default function ServiceDetailPage({ params }) {
             <div className="solution-detail-body">
               <div className="solution-media-col">
                 <div className="solution-img-box">
-                  <img src={currentSol.imageSrc} alt={currentSol.title} />
+                  <img 
+                    src={currentSol.imageSrc} 
+                    alt={currentSol.title} 
+                    style={{ width: '100%', height: '100%', maxHeight: '330px', objectFit: 'contain', objectPosition: 'center' }} 
+                  />
                 </div>
                 <div className="solution-badge-pill">
                   <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-5.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>

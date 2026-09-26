@@ -353,8 +353,37 @@ export default function Home() {
                 <p className="about-preview-desc-2">
                   Our product line includes top-tier Aqua Gold water purifiers, reverse osmosis plants, wastewater treatment utilities, softeners, and iron removal structures. With a team of highly-trained chemical engineers and service specialists, we maintain quality standards across installation and after-sales service.
                 </p>
-                <div className="about-btn-wrap">
+                <div className="about-btn-wrap" style={{ display: 'flex', flexDirection: 'column', gap: '1rem', alignItems: 'flex-start' }}>
                   <Link href="/about" className="btn btn-primary">More Details</Link>
+                  
+                  {/* Association Badge */}
+                  <div style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '0.85rem',
+                    padding: '0.75rem 1rem',
+                    background: '#ffffff',
+                    borderRadius: '12px',
+                    border: '1px solid #e2e8f0',
+                    boxShadow: '0 2px 8px rgba(0,0,0,0.05)',
+                    marginTop: '0.5rem',
+                    width: '100%',
+                    maxWidth: '420px'
+                  }}>
+                    <img 
+                      src="/association_logo.jpg" 
+                      alt="Water Treatment Plant Entrepreneurs Registered Society" 
+                      style={{ width: '48px', height: '48px', objectFit: 'contain', borderRadius: '50%', flexShrink: 0 }}
+                    />
+                    <div>
+                      <span style={{ fontSize: '0.7rem', fontWeight: 700, color: 'var(--primary-color)', textTransform: 'uppercase', letterSpacing: '0.5px', display: 'block' }}>
+                        Registered Member
+                      </span>
+                      <strong style={{ fontSize: '0.82rem', color: 'var(--text-color)', display: 'block', lineHeight: 1.25 }}>
+                        Water Treatment Plant Entrepreneurs Registered Society
+                      </strong>
+                    </div>
+                  </div>
                 </div>
               </div>
 
@@ -365,6 +394,45 @@ export default function Home() {
 
             </div>
 
+          </div>
+        </div>
+      </section>
+
+      {/* ==========================================================================
+           PROMOTIONAL POSTER BANNER
+           ========================================================================== */}
+      <section className="section" style={{ background: 'linear-gradient(135deg, #e0f2fe 0%, #f0f9ff 100%)', padding: '3rem 0' }}>
+        <div className="container">
+          <div className="poster-banner-wrapper animate-on-scroll" style={{
+            background: '#ffffff',
+            borderRadius: '16px',
+            boxShadow: '0 10px 30px rgba(15, 76, 129, 0.1)',
+            overflow: 'hidden',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            padding: '1.5rem'
+          }}>
+            <div style={{ width: '100%', maxWidth: '1000px' }}>
+              <img 
+                src="/pure_drops_poster.jpg" 
+                alt="Our Body is 70% Water, Our Water is 100% Pure! - Pure Drops RO" 
+                style={{ 
+                  width: '100%', 
+                  height: 'auto', 
+                  borderRadius: '12px',
+                  display: 'block' 
+                }} 
+              />
+            </div>
+            <div style={{ marginTop: '1.5rem', textAlign: 'center' }}>
+              <button 
+                className="btn btn-primary" 
+                onClick={() => openModal('General Home Page Enquiry')}
+              >
+                Get Free Water Consultation
+              </button>
+            </div>
           </div>
         </div>
       </section>
@@ -715,6 +783,44 @@ export default function Home() {
             </div>
             <div className="client-logo-card" title="Sadhbhavana World School">
               <img src="/client-logo-4.png" alt="Sadhbhavana World School Logo" className="client-logo-img" />
+            </div>
+          </div>
+
+          {/* Association Membership Feature Banner */}
+          <div className="animate-on-scroll" style={{
+            marginTop: '2.5rem',
+            background: 'linear-gradient(135deg, #ffffff 0%, #f0f9ff 100%)',
+            borderRadius: '16px',
+            padding: '1.5rem 2rem',
+            boxShadow: '0 4px 20px rgba(15, 76, 129, 0.08)',
+            border: '1px solid #bae6fd',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: '1.5rem',
+            flexWrap: 'wrap'
+          }}>
+            <img 
+              src="/association_logo.jpg" 
+              alt="Water Treatment Plant Entrepreneurs Registered Society" 
+              style={{ 
+                width: '72px', 
+                height: '72px', 
+                objectFit: 'contain', 
+                borderRadius: '50%',
+                flexShrink: 0
+              }} 
+            />
+            <div style={{ maxWidth: '650px', textAlign: 'left' }}>
+              <span style={{ fontSize: '0.75rem', fontWeight: '700', color: 'var(--primary-color)', textTransform: 'uppercase', letterSpacing: '0.8px', display: 'block' }}>
+                Official Member & Registered Society
+              </span>
+              <h3 style={{ fontSize: '1.15rem', color: 'var(--text-color)', margin: '0.2rem 0 0.3rem 0', fontWeight: '700' }}>
+                Water Treatment Plant Entrepreneurs Registered Society
+              </h3>
+              <p style={{ fontSize: '0.88rem', color: 'var(--text-light)', margin: 0, lineHeight: '1.45' }}>
+                Pure Drops RO is a proud registered member, committing to strict engineering standards, ethical water treatment practices, and certified purity solutions across Kerala.
+              </p>
             </div>
           </div>
         </div>

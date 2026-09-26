@@ -116,9 +116,36 @@ export default function About() {
                 <p className="pioneers-desc">
                   Today, our ISO 9001:2015 certified assemblies filter harmful microbes, heavy minerals, and organic contamination in thousands of residential villas, apartment complexes, medical clinics, and commercial spaces.
                 </p>
-                <p className="pioneers-desc" style={{ marginBottom: 0 }}>
+                <p className="pioneers-desc">
                   We believe in the science of purification. We don't just supply filters; we analyze your water chemistry and curate customized membranes and sand components to match your exact water quality footprint.
                 </p>
+
+                {/* Association Badge */}
+                <div style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '1rem',
+                  padding: '0.85rem 1.15rem',
+                  background: '#ffffff',
+                  borderRadius: '12px',
+                  border: '1px solid #e2e8f0',
+                  boxShadow: '0 2px 10px rgba(0,0,0,0.05)',
+                  marginTop: '1.25rem'
+                }}>
+                  <img 
+                    src="/association_logo.jpg" 
+                    alt="Water Treatment Plant Entrepreneurs Registered Society" 
+                    style={{ width: '52px', height: '52px', objectFit: 'contain', borderRadius: '50%', flexShrink: 0 }}
+                  />
+                  <div>
+                    <span style={{ fontSize: '0.72rem', fontWeight: 700, color: 'var(--primary-color)', textTransform: 'uppercase', letterSpacing: '0.5px', display: 'block' }}>
+                      Registered Society Member
+                    </span>
+                    <strong style={{ fontSize: '0.88rem', color: 'var(--text-color)', display: 'block', lineHeight: 1.3 }}>
+                      Water Treatment Plant Entrepreneurs Registered Society
+                    </strong>
+                  </div>
+                </div>
               </div>
 
             </div>
